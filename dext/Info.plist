@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>dev.dsmobile620.driver</string>
+	<key>CFBundleIdentifier</key>
+	<string>dev.dsmobile620.driver</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>DS620Driver</string>
+	<key>CFBundlePackageType</key>
+	<string>DEXT</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>7</string>
+	<key>OSBundleUsageDescription</key>
+	<string>Claims the Brother DS-620 USB interface and exposes its bulk pipes.</string>
+	<key>NSSystemExtensionUsageDescription</key>
+	<string>Claims the Brother DS-620 USB interface and exposes its bulk pipes.</string>
+	<key>IOKitPersonalities</key>
+	<dict>
+		<key>DS620Driver</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>dev.dsmobile620.driver</string>
+			<key>CFBundleIdentifierKernel</key>
+			<string>com.apple.kpi.iokit</string>
+			<key>IOClass</key>
+			<string>IOUserService</string>
+			<key>IOUserClass</key>
+			<string>DS620Driver</string>
+			<key>IOUserServerName</key>
+			<string>dev.dsmobile620.driver</string>
+			<key>IOProviderClass</key>
+			<string>IOUSBHostInterface</string>
+			<key>idVendor</key>
+			<integer>1273</integer>
+			<key>idProduct</key>
+			<integer>24800</integer>
+			<key>bInterfaceNumber</key>
+			<integer>0</integer>
+			<key>bConfigurationValue</key>
+			<integer>1</integer>
+			<key>bcdDevice</key>
+			<integer>256</integer>
+			<key>UserClientProperties</key>
+			<dict>
+				<key>IOClass</key>
+				<string>IOUserUserClient</string>
+				<key>IOUserClass</key>
+				<string>DS620UserClient</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

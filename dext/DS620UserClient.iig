@@ -1,0 +1,26 @@
+#ifndef DS620UserClient_iig
+#define DS620UserClient_iig
+
+#include <DriverKit/IOUserClient.iig>
+#include "DS620Driver.iig"
+
+class DS620UserClient : public IOUserClient {
+public:
+    virtual bool
+    init() override;
+
+    virtual void
+    free() override;
+
+    virtual kern_return_t
+    Start(IOService* provider) override;
+
+    virtual kern_return_t
+    Stop(IOService* provider) override;
+
+    virtual kern_return_t
+    ExternalMethod(uint64_t selector, IOUserClientMethodArguments* arguments,
+                   const IOUserClientMethodDispatch* dispatch, OSObject* target, void* reference) override;
+};
+
+#endif /* DS620UserClient_iig */

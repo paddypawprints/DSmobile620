@@ -1,0 +1,35 @@
+#ifndef DS620Driver_iig
+#define DS620Driver_iig
+
+#include <DriverKit/IOService.iig>
+#include <USBDriverKit/IOUSBHostInterface.iig>
+#include <USBDriverKit/IOUSBHostPipe.iig>
+
+class DS620Driver : public IOService {
+public:
+    virtual bool
+    init() override;
+
+    virtual void
+    free() override;
+
+    virtual kern_return_t
+    Start(IOService* provider) override;
+
+    virtual kern_return_t
+    Stop(IOService* provider) override;
+
+    virtual kern_return_t
+    NewUserClient(uint32_t type, IOUserClient** userClient) override;
+
+    virtual kern_return_t
+    BulkOut(IOMemoryDescriptor* buffer, uint32_t length, uint32_t timeoutMs, uint32_t* transferred) LOCALONLY;
+
+    virtual kern_return_t
+    BulkIn(IOMemoryDescriptor* buffer, uint32_t length, uint32_t timeoutMs, uint32_t* transferred) LOCALONLY;
+
+    virtual kern_return_t
+    AbortPipes() LOCALONLY;
+};
+
+#endif /* DS620Driver_iig */
