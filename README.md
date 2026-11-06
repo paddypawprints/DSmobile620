@@ -4,12 +4,6 @@ A personal macOS driver for the Brother DS-620 / DSmobile 620 USB sheetfed scann
 
 Brother's official Mac software stops at macOS 14 and does not include an Image Capture driver. This repository is an independent [DriverKit](https://developer.apple.com/documentation/driverkit) extension plus a user-space protocol library. It is a personal project. Contributions are welcome: bug reports, SCSI captures, and pull requests.
 
-## Status
-
-The extension can claim the scanner's USB interface. The first milestone is a SCSI INQUIRY that prints `Brother`, `DS-620`, and `0.40`. That call is blocked until Apple grants the app `com.apple.developer.driverkit.userclient-access` for the driver bundle id. A simulated scanner already answers the same inquiry in-process.
-
-Later milestones are one 300 dpi grayscale page written as a PGM, then color, calibration, and long-page behavior.
-
 ## Layout
 
 The DS-620 uses USB mass storage as a pipe and the Avision SCSI scanner command set. The extension claims interface 0 and exposes the two bulk pipes. Scanner commands stay in the user-space library, which does not link IOKit, so the protocol can be tested without reloading the extension.
