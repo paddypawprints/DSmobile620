@@ -1,6 +1,6 @@
 # DSmobile620
 
-A personal macOS driver for the Brother DS-620 / DSmobile 620 USB sheetfed scanner.
+A macOS driver for the Brother DS-620 / DSmobile 620 USB sheetfed scanner.
 
 Brother's official Mac software stops at macOS 14 and does not include an Image Capture driver. This repository is an independent [DriverKit](https://developer.apple.com/documentation/driverkit) extension plus a user-space protocol library. It is a personal project. Contributions are welcome: bug reports, SCSI captures, and pull requests.
 
